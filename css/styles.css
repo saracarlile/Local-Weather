@@ -30,8 +30,9 @@ h1 {
    -webkit-align-items: center;
    align-items: center;
    -webkit-justify-content: center;
-   justify-content: center;  
-   background-color: grey;
+   justify-content: center; 
+   background: rgb(200, 54, 54); /* The Fallback */
+   background: rgba(200, 54, 54, 0.08); 
 }
 
 .large-Grid--full {
