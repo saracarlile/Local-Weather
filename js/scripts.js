@@ -19,3 +19,4 @@ app.controller('weatherController', function ($scope, $http) {
 
 
 
+//http://stackoverflow.com/questions/33404172/creating-a-weather-app-using-angularjs-and-openweather
