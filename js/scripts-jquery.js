@@ -1,4 +1,17 @@
 $(document).ready(function() {
+
+ var location =  $.getJSON("https://freegeoip.net/json?callback=?", function(result){
+   //response data are now in the result variable
+  console.log(result);
+  $.each( result, function( key, val ) {
+    console.log(key + ", " + val);
+  });
+ 
+});
+
+console.log(location);
+// http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp
+
   $.simpleWeather({
     location: 'Austin, TX',
     woeid: '',
