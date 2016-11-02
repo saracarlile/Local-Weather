@@ -18,6 +18,8 @@ $.getJSON("https://freegeoip.net/json?callback=?", function(result){
    });
 }).done(function() {
     console.log("RRRRRR " + city + ", " + state);
+  }).done(function(){
+    console.log("Can I do this?");
   });
 
 
