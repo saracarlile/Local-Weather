@@ -20,17 +20,8 @@ $.getJSON("https://freegeoip.net/json?callback=?", function(result){
     console.log("RRRRRR " + city + ", " + state);
   }).done(function(){
     console.log("Can I do this?");
-  });
-
-
-
-
-
-
-// http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp
-
-  $.simpleWeather({
-    location: 'Austin, TX',
+     $.simpleWeather({
+    location: city + ", " + state,
     woeid: '',
     unit: 'f',
     success: function(weather) {
@@ -48,4 +39,14 @@ $.getJSON("https://freegeoip.net/json?callback=?", function(result){
       $("#weather").html('<p>'+error+'</p>');
     }
   });
+  });
+
+
+
+
+
+
+// http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp
+
+ 
 });
