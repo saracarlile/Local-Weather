@@ -2,19 +2,24 @@ $(document).ready(function () {
 
   var city;
   var state;
-  function changeTemp() {
+
+  function changeTemp() {  //toggle farenheit to celcius
     var units = document.getElementById('temp-unit').textContent;
     var tempNum = document.getElementById('temp-num').textContent;
+    document.getElementById('temp').textContent = "";
     console.log(units);
     console.log(tempNum);
-    if(units === "F"){
-       document.getElementById('temp-unit').textContent = Math.round((tempNum - 32)/1.8) + "C";
+    if (units === "F") {
+      $('#temp').html('<span id="temp-num">' + Math.round((tempNum - 32) / 1.8) + '</span>&deg;<span id="temp-unit">' + 'C</span>');
+    }
+    if (units === "C") {
+      $('#temp').html('<span id="temp-num">' + Math.round((tempNum * 1.8) + 32) + '</span>&deg;<span id="temp-unit">' + 'F</span>');
     }
   }
 
 
-  $.getJSON('https://freegeoip.net/json?callback=?', function (result) {
-    //response data are now in the result variable
+  $.getJSON('https://freegeoip.net/json?callback=?', function (result) {  //request geolocation info
+    //response data now in the result variable
     $.each(result, function (key, val) {
       if (key === 'city') {
         city = val;
@@ -23,7 +28,7 @@ $(document).ready(function () {
         state = val;
       }
     });
-  }).done(function () {
+  }).done(function () {   //simpleWeather jQuery plugin call to get weather from location
     $.simpleWeather({
       location: city + ', ' + state,
       woeid: '',
