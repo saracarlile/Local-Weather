@@ -23,7 +23,7 @@ $(document).ready(function () {
         gridOne.append('<p><img src="' + weather.image + '"></p>').append( '<h2 class="fix">' + weather.city + ', ' + weather.region + '</h2>');
 
          var gridTwo = $('#grid-two');
-          gridTwo.append().append( '<h2>' + weather.temp + '&deg;' + weather.units.temp + '</h2>').append('<p>' +  weather.currently + '</p>').append('<p>' + weather.wind.direction + ' ' + weather.wind.speed + ' ' + weather.units.speed + '</p>');
+          gridTwo.append().append( '<h2>' + weather.temp + '&deg;' + weather.units.temp + '</h2>').append('<p>' +  weather.currently + '</p>').append('<p>Wind: ' + weather.wind.direction + ' ' + weather.wind.speed + ' ' + weather.units.speed + '</p>');
 
         //  console.log(weather);
       },
