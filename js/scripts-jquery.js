@@ -7,8 +7,6 @@ $(document).ready(function () {
     var units = document.getElementById('temp-unit').textContent;
     var tempNum = document.getElementById('temp-num').textContent;
     document.getElementById('temp').textContent = "";
-    console.log(units);
-    console.log(tempNum);
     if (units === "F") {
       $('#temp').html('<span id="temp-num">' + Math.round((tempNum - 32) / 1.8) + '</span>&deg;<span id="temp-unit">' + 'C</span>');
     }
